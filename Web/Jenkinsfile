@@ -3,7 +3,7 @@ pipeline {
           stages {
                   stage('Build') {
                             steps {
-                                    echo 'Let\'s build the image'
+                                    echo 'Building the docker image'
                                     sh 'docker image build -t sentiment_app .'
                            }
                       }
