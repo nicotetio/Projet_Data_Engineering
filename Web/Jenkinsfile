@@ -1,0 +1,18 @@
+Pipeline {
+          agent any
+          stages {
+                  stage('Build') {
+                            steps {
+                                    echo 'Building the docker image'
+                                    sh 'docker image build -t sentiment_app .'
+                           }
+                      }
+                   stage('Runnning the image') {
+                             steps {
+                                     echo 'Running the image'
+                                     sh 'docker run -p 5000:5000 -d sentiment_app'
+                           }
+                        }
+
+            }
+}
